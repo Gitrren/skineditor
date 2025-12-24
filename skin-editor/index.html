@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de Skins - GLA Wiki</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="editor-container">
+        <header class="editor-header">
+            <h1>Editor de Skins</h1>
+            <p class="subtitle">Simulador e gerador de código para predefinição Skin</p>
+        </header>
+
+        <div class="editor-layout">
+            <div class="editor-panel">
+                <div class="panel-section">
+                    <h2>Parâmetros da Skin</h2>
+                    
+                    <div class="form-group">
+                        <label for="sprite">Sprite (imagem do personagem):</label>
+                        <input type="text" id="sprite" placeholder="Ex: Zoro-sprite.png">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="background">Background/Banner:</label>
+                        <input type="text" id="background" placeholder="Ex: TemplateSkinBg.png">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Nome da Skin:</label>
+                        <input type="text" id="name" placeholder="Ex: Zoro - Padrão">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tooltip">Tooltip (descrição):</label>
+                        <textarea id="tooltip" rows="3" placeholder="Ex: Skin padrão do Zoro"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="youtube">YouTube (ID ou URL):</label>
+                        <input type="text" id="youtube" placeholder="Ex: dQw4w9WgXcQ">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="source">Source:</label>
+                        <input type="text" id="source" placeholder="Opcional">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="width">Width (largura):</label>
+                        <input type="text" id="width" placeholder="Opcional">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="height">Height (altura):</label>
+                        <input type="text" id="height" placeholder="Opcional">
+                    </div>
+
+                    <h3 class="section-title">Configurações do Tile Isométrico</h3>
+
+                    <div class="form-group">
+                        <label for="tile">Tile (imagem do piso):</label>
+                        <input type="text" id="tile" placeholder="Ex: testwiki2.png">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tile_x">Posição X do Tile (px):</label>
+                        <input type="number" id="tile_x" value="-25" step="1">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tile_y">Posição Y do Tile (px):</label>
+                        <input type="number" id="tile_y" value="-15" step="1">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="offset_x">Deslocamento Horizontal (px):</label>
+                        <input type="number" id="offset_x" value="0" step="1">
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h2>Importar/Exportar</h2>
+                    
+                    <div class="form-group">
+                        <label for="import-code">Importar código da predefinição:</label>
+                        <textarea id="import-code" rows="4" placeholder="Cole aqui o código {{Skin|...}}"></textarea>
+                        <button class="btn btn-secondary" id="btn-import">Importar</button>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="export-code">Código exportado:</label>
+                        <textarea id="export-code" rows="4" readonly></textarea>
+                        <button class="btn btn-primary" id="btn-export">Gerar Código</button>
+                        <button class="btn btn-secondary" id="btn-copy">Copiar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="preview-panel">
+                <h2>Preview</h2>
+                <div id="preview-container" class="preview-container">
+                    <div class="skins-podium" id="preview-podium">
+                        <!-- Preview será gerado aqui -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="skin-tooltip" id="tooltip" role="tooltip" aria-hidden="true"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
